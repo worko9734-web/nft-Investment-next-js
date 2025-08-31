@@ -33,11 +33,11 @@ export default function DepositPage() {
 
   const paymentMethods = {
     UBL: {
-      name: "UBL Bank",
+      name: "MEEZAN DIGITAL CENTRE",
       icon: <Building className="h-6 w-6" />,
-      accountNumber: "1564335311055",
-      accountTitle: "Nauman Shah",
-      ibanNumber: "PK60UNIL0109000335311055",
+      accountNumber: "00300112211311",
+      accountTitle: "MUHAMMAD RAEES",
+      ibanNumber: "PK08MEZN0000300112211311",
       color: "bg-blue-600",
     },
     "Jazz Cash": {
