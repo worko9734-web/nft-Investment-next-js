@@ -22,6 +22,9 @@ import {
   Gift,
   User,
   ChevronRight,
+  Smartphone,
+  Download,
+  Globe,
 } from "lucide-react"
 import { FaWhatsapp, FaTelegramPlane } from "react-icons/fa"
 
@@ -244,6 +247,35 @@ export default function NFTInvestmentDashboard() {
                   Join Group
                 </Button>
               </div>
+              <Card className="bg-gradient-to-r from-emerald-900/30 to-green-800/30 border-emerald-500/30 mb-6">
+                <CardContent className="p-6">
+                  <div className="text-center">
+                      <h2 className="flex items-center justify-center gap-2 mb-3 text-xl font-bold text-white">Download Application
+                        <Download className="h-6 w-6 text-emerald-400" />
+                      </h2>
+                    <p className="text-gray-300 mb-6">
+                      Get the best experience with our mobile app or continue using our web platform
+                    </p>
+
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                      <Button
+                        className="bg-green-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-xl shadow-lg transition-all duration-200 flex items-center gap-3"
+                        onClick={() => {
+                          // Add your app store/play store link here
+                          window.open("https://expo.dev/artifacts/eas/2RuNBwMAo4THP7GGgbbLnf.apk", "_blank")
+                        }}
+                      >
+                        <Smartphone className="h-5 w-5" />
+                        Download Mobile App
+                      </Button>
+                    </div>
+
+                    <div className="mt-4 text-sm text-gray-400">
+                      <p>✓ Secure transactions • ✓ Real-time updates • ✓ 24/7 support</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
               <AdsSlider />
               <div className="mb-6 mt-6">
                 <h2 className="text-white text-lg font-semibold mb-4">Investment Opportunities</h2>

@@ -33,7 +33,7 @@ export default function DepositPage() {
 
   const paymentMethods = {
     UBL: {
-      name: "MEEZAN DIGITAL CENTRE",
+      name: "MEEZAN DIGITAL BANK",
       icon: <Building className="h-6 w-6" />,
       accountNumber: "00300112211311",
       accountTitle: "MUHAMMAD RAEES",
