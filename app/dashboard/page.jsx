@@ -123,7 +123,7 @@ export default function NFTInvestmentDashboard() {
       <AnnouncementModal />
       {showHelpGuide && <HelpButtonGuide onClose={handleCloseHelpGuide} />}
       <div className="min-h-screen w-full bg-gradient-to-br from-slate-900 via-gray-800 to-green-900 flex pb-30">
-        {isOpen && <div className="fixed inset-0 bg-black/20 backdrop-blur-sm z-30" onClick={() => setIsOpen(false)} />}
+        {isOpen && <div className="fixed inset-0 bg-white/20 backdrop-blur-sm z-30" onClick={() => setIsOpen(false)} />}
         <div
           className={`fixed inset-y-0 my-auto h-[90%] ${isOpen ? "left-[0]" : "-left-[100%]"} w-80 bg-gray-900/95 backdrop-blur-xl border-r border-emerald-500/30 rounded-r-2xl p-6 flex flex-col z-30 duration-300 shadow-2xl`}
         >
@@ -250,9 +250,9 @@ export default function NFTInvestmentDashboard() {
               <Card className="bg-gradient-to-r from-emerald-900/30 to-green-800/30 border-emerald-500/30 mb-6">
                 <CardContent className="p-6">
                   <div className="text-center">
-                      <h2 className="flex items-center justify-center gap-2 mb-3 text-xl font-bold text-white">Download Application
-                        <Download className="h-6 w-6 text-emerald-400" />
-                      </h2>
+                    <h2 className="flex items-center justify-center gap-2 mb-3 text-xl font-bold text-white">Download Application
+                      <Download className="h-6 w-6 text-emerald-400" />
+                    </h2>
                     <p className="text-gray-300 mb-6">
                       Get the best experience with our mobile app or continue using our web platform
                     </p>
@@ -262,7 +262,7 @@ export default function NFTInvestmentDashboard() {
                         className="bg-green-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-xl shadow-lg transition-all duration-200 flex items-center gap-3"
                         onClick={() => {
                           // Add your app store/play store link here
-                          window.open("https://expo.dev/artifacts/eas/2RuNBwMAo4THP7GGgbbLnf.apk", "_blank")
+                          window.open("https://expo.dev/artifacts/eas/2gj3Rb1zsQ2GoZHC6PogQj.apk", "_blank")
                         }}
                       >
                         <Smartphone className="h-5 w-5" />
@@ -279,57 +279,68 @@ export default function NFTInvestmentDashboard() {
               <AdsSlider />
               <div className="mb-6 mt-6">
                 <h2 className="text-white text-lg font-semibold mb-4">Investment Opportunities</h2>
-                <div className="space-y-3">
+                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-1">
                   {investmentPlans?.length ? (
-                    investmentPlans.map((plan) => (
+                    investmentPlans.map((plan, index) => (
                       <Card
                         key={plan.id}
-                        className="bg-white/5 backdrop-blur-md border border-green-800/30 relative rounded-2xl overflow-hidden"
+                        className="group pt-4 pb-1 relative bg-gradient-to-br from-slate-900/80 via-gray-800/60 to-emerald-900/40 backdrop-blur-xl border border-emerald-500/20 hover:border-emerald-400/40 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-1"
                       >
-                        {/* Popular badge */}
-                        <Badge className="absolute top-0 right-0 bg-orange-500 text-white z-20">
-                          Popular
-                        </Badge>
-
-                        {/* 🔒 Lock overlay if locked */}
-                        {plan?.lock != 0 && (
-                          <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px] z-10 flex flex-col items-center justify-center gap-2 text-white">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="h-10 w-10 text-red-400"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
-                              strokeWidth={2}
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M12 11c1.104 0 2 .896 2 2v5H10v-5c0-1.104.896-2 2-2zM8 11V7a4 4 0 118 0v4m-8 0h8"
-                              />
-                            </svg>
-                            <span className="text-sm font-semibold uppercase tracking-wide">
-                              Locked Plan
-                            </span>
+                        {index === 0 && (
+                          <div className="absolute -top-1 -right-1 z-20">
+                            <Badge className="bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold px-3 py-1 rounded-bl-xl rounded-tr-2xl shadow-lg">
+                              ⭐ Most Popular
+                            </Badge>
                           </div>
                         )}
 
-                        <CardContent className="p-4">
-                          <div className="flex items-center justify-between mb-3">
-                            <div className="flex items-center gap-3">
-                              <div className="p-2 bg-green-700 rounded-lg">
-                                <TrendingUp className="h-5 w-5 text-white" />
+                        {plan?.lock != 0 && (
+                          <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-gray-900/60 to-black/70 backdrop-blur-sm z-10 flex flex-col items-center justify-center gap-3 text-white rounded-2xl">
+                            <div className="p-4 bg-red-500/20 rounded-full border border-red-400/30">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-8 w-8 text-red-400"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                strokeWidth={2}
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                                />
+                              </svg>
+                            </div>
+                            <div className="text-center">
+                              <span className="text-lg font-bold uppercase tracking-wider">Plan Locked</span>
+                              <p className="text-sm text-gray-300 mt-1">Coming Soon</p>
+                            </div>
+                          </div>
+                        )}
+
+                        <CardContent className="p-6">
+                          <div className="flex items-start justify-between mb-6">
+                            <div className="flex items-center gap-4">
+                              <div className="relative">
+                                <div className="p-2 bg-gradient-to-br from-emerald-500/20 to-green-600/20 rounded-xl border border-emerald-500/30 group-hover:border-emerald-400/50 transition-colors">
+                                  <TrendingUp className="h-6 w-6 text-emerald-400" />
+                                </div>
+                                <div className="absolute -top-1 -right-1 w-3 h-3 bg-emerald-400 rounded-full animate-pulse"></div>
                               </div>
                               <div>
-                                <h3 className="font-semibold text-white">{plan.plan_name}</h3>
-                                <p className="text-sm text-gray-400">{plan?.time?.name}</p>
+                                <h3 className="text-sm font-bold text-white mb-1 group-hover:text-emerald-100 transition-colors">
+                                  {plan.plan_name}
+                                </h3>
+                                <p className="text-sm text-gray-400 font-medium">{plan?.time?.name}</p>
                               </div>
                             </div>
+
                             <div className="text-right">
-                              <p className="text-lg font-bold text-green-400">
+                              <p className="text-sm font-bold text-yellow-400">
                                 {Number(plan.return_interest ?? 0)}%
                               </p>
-                              <p className="text-xs text-gray-400">
+                              <p className="text-xs text-green-500">
                                 {plan?.time?.time == 1
                                   ? "Hourly"
                                   : plan?.time?.time == 24
@@ -340,36 +351,55 @@ export default function NFTInvestmentDashboard() {
                               </p>
                             </div>
                           </div>
-                          <div className="flex items-center justify-between mb-3">
-                            {plan?.minimum_amount == null || plan?.minimum_amount < 1 ?
-                              <span className="text-sm text-green-400">
-                                PKR {Number(plan.invest_limit ?? 0).toFixed(0)}{" "}
-                              </span> :
-                              <span className="text-sm text-green-400">
-                                PKR {Number(plan.minimum_amount ?? 0).toFixed(0)}{" "}
-                                <span className="text-white">to</span>{" "}
-                                PKR {Number(plan.maximum_amount ?? 0).toFixed(0)}
-                              </span>
-                            }
-                            {plan?.lock == 0 ? (
-                              <Button
-                                onClick={() => {
-                                  setSelectedPlan(plan);
-                                  setInvestModalOpen(true);
-                                }}
-                                size="sm"
-                                className="bg-emerald-600 hover:bg-emerald-700"
+
+                          <div className="space-y-4">
+                            <div className="flex items-center justify-between p-4 bg-gradient-to-r from-slate-800/50 to-gray-800/30 rounded-xl border border-gray-700/50">
+                              <div>
+                                <p className="text-xs text-gray-400 uppercase tracking-wide font-semibold mb-1">
+                                  Investment Range
+                                </p>
+                                {plan?.minimum_amount == null || plan?.minimum_amount < 1 ? (
+                                  <span className="text-lg font-bold text-green-400">
+                                    PKR {Number(plan.invest_limit ?? 0).toLocaleString()}
+                                  </span>
+                                ) : (
+                                  <span className="text-lg font-bold">
+                                    <span className="text-green-400">
+                                      PKR {Number(plan.minimum_amount ?? 0).toLocaleString()}
+                                    </span>
+                                    <span className="text-gray-400 mx-2">to</span>
+                                    <span className="text-green-400">
+                                      PKR {Number(plan.maximum_amount ?? 0).toLocaleString()}
+                                    </span>
+                                  </span>
+                                )}
+                              </div>
+                            </div>
+                            <div className="flex items-center justify-between p-3 bg-gray-800/30 rounded-lg border border-gray-700/30">
+                              <span className="text-xs text-gray-400 font-medium">Capital Return Policy</span>
+                              <Badge
+                                className={`${plan.capital_back
+                                  ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/30"
+                                  : "bg-orange-500/20 text-orange-300 border-orange-500/30"
+                                  } font-semibold`}
                               >
-                                Buy
-                              </Button>
-                            ) : null}
+                                {plan.capital_back ? "✅ Guaranteed" : "❌ Not Included"}
+                              </Badge>
+                            </div>
+                            <div className="text-right">
+                              {plan?.lock == 0 && (
+                                <Button
+                                  onClick={() => {
+                                    setSelectedPlan(plan)
+                                    setInvestModalOpen(true)
+                                  }}
+                                  className="bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 text-white text-sm font-semibold px-4 py-1.5 rounded-lg shadow-md hover:shadow-emerald-500/25 transition-all duration-200 transform hover:scale-105"
+                                >
+                                  Invest
+                                </Button>
+                              )}
+                            </div>
                           </div>
-                          <p className="text-xs text-gray-400">
-                            Capital Return:{" "}
-                            <span className="text-emerald-400 font-medium">
-                              {plan.capital_back ? "Yes" : "No"}
-                            </span>
-                          </p>
                         </CardContent>
                       </Card>
                     ))
@@ -383,7 +413,6 @@ export default function NFTInvestmentDashboard() {
                     </div>
                   )}
                 </div>
-
               </div>
             </div>
             {user ?
