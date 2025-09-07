@@ -377,13 +377,14 @@ export default function NFTInvestmentDashboard() {
                             </div>
                             <div className="flex items-center justify-between p-3 bg-gray-800/30 rounded-lg border border-gray-700/30">
                               <span className="text-xs text-gray-400 font-medium">Capital Return Policy</span>
+                              {console.log(plan)}
                               <Badge
-                                className={`${plan.capital_back
+                                className={`${plan.return_for
                                   ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/30"
                                   : "bg-orange-500/20 text-orange-300 border-orange-500/30"
                                   } font-semibold`}
                               >
-                                {plan.capital_back ? "✅ Guaranteed" : "❌ Not Included"}
+                                {plan.return_for ? "✅ Guaranteed" : "❌ Not Included"}
                               </Badge>
                             </div>
                             <div className="text-right">
