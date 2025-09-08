@@ -384,7 +384,7 @@ export default function NFTInvestmentDashboard() {
                                   : "bg-orange-500/20 text-orange-300 border-orange-500/30"
                                   } font-semibold`}
                               >
-                                {plan.return_for ? "✅ Guaranteed" : "❌ Not Included"}
+                                {plan.return_for ? "✅ Guaranteed" : "✅ Included"}
                               </Badge>
                             </div>
                             <div className="text-right">
