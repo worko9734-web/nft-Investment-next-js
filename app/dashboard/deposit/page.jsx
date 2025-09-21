@@ -32,14 +32,14 @@ export default function DepositPage() {
   const [uploadedFile, setUploadedFile] = useState(null)
 
   const paymentMethods = {
-    UBL: {
-      name: "MEEZAN DIGITAL BANK",
-      icon: <Building className="h-6 w-6" />,
-      accountNumber: "00300112211311",
-      accountTitle: "MUHAMMAD RAEES",
-      ibanNumber: "PK08MEZN0000300112211311",
-      color: "bg-blue-600",
-    },
+    // UBL: {
+    //   name: "MEEZAN DIGITAL BANK",
+    //   icon: <Building className="h-6 w-6" />,
+    //   accountNumber: "00300112211311",
+    //   accountTitle: "MUHAMMAD RAEES",
+    //   ibanNumber: "PK08MEZN0000300112211311",
+    //   color: "bg-blue-600",
+    // },
     "Jazz Cash": {
       name: "Jazz Cash",
       icon: <Smartphone className="h-6 w-6" />,
