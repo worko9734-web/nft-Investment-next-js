@@ -40,14 +40,14 @@ export default function DepositPage() {
       ibanNumber: "PK60UNIL0109000335311055",
       color: "bg-blue-600",
     },
-    "Jazz Cash": {
-      name: "Jazz Cash",
-      icon: <Smartphone className="h-6 w-6" />,
-      accountNumber: "03297317417",
-      accountTitle: "Nauman Shah",
-      ibanNumber: "N/A",
-      color: "bg-orange-600",
-    },
+    // "Jazz Cash": {
+    //   name: "Jazz Cash",
+    //   icon: <Smartphone className="h-6 w-6" />,
+    //   accountNumber: "03297317417",
+    //   accountTitle: "Nauman Shah",
+    //   ibanNumber: "N/A",
+    //   color: "bg-orange-600",
+    // },
     Easypaisa: {
       name: "Easypaisa",
       icon: <Smartphone className="h-6 w-6" />,
